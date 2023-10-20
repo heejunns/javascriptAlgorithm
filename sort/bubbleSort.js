@@ -1,7 +1,7 @@
 // 버블 정렬
 let data = [5, 3, 4, 1, 2, 3, 21, 2, 1, 51, 2, 3];
 
-const sortFunc = (arr) => {
+const bubbleSortFunc = (arr) => {
   let temp;
   for (let i = arr.length; i > 0; --i) {
     let isSwap = false;
@@ -19,5 +19,4 @@ const sortFunc = (arr) => {
   }
   return arr;
 };
-
-console.log(sortFunc(data));
+console.log(bubbleSortFunc(data));
