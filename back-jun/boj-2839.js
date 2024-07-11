@@ -1,17 +1,19 @@
-let input = Number(require("fs").readFileSync("sort.txt").toString().trimEnd());
+let input = require("fs").readFileSync("ex.txt").toString().trim();
+
+input = Number(input);
 let count = 0;
-if (input / 5) {
+if (input % 5 === 0) {
+  count = input / 5;
+} else if (input % 3 === 0) {
+  count = input / 3;
+} else {
   count += Math.floor(input / 5);
-  input %= 5;
-}
-console.log("음", input);
-if (input / 3) {
+  input = input % 5;
   count += Math.floor(input / 3);
-  input %= 3;
+  input = input % 3;
+  if (input > 0) {
+    count = -1;
+  }
 }
 
-if (input !== 0) {
-  console.log(-1);
-} else {
-  console.log(count);
-}
+console.log(count);
